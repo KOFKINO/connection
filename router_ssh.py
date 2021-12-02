@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler as ch
+import argparse
 
 
 def qx_multi_cmd(ip, username, password, cmd_list, enable='', wait_time=2, verbose=True):
@@ -11,9 +12,10 @@ def qx_multi_cmd(ip, username, password, cmd_list, enable='', wait_time=2, verbo
     }
     conn = ch(**host)
     output = conn.send_config_set(cmd_list)
-    print(output)
+    return output
 
 
 if __name__ == '__main__':
-    cmd_list = ['dis version', 'ospf 1', 'area 0', 'net 192.168.56.100 0.0.0.255']
-    qx_multi_cmd(ip='192.168.56.100', username='admin', password='admin', cmd_list=cmd_list)
+
+    print(qx_multi_cmd(ip='172.17.1.3', username='admin', password='H3c.com!123', cmd_list='dis ip int brief'))
+
