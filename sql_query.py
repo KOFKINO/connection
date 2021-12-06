@@ -21,7 +21,7 @@ while True:
         cursor.execute('select * from homework')
         result = cursor.fetchall()
         for stu in result:
-            print(stu)
+            print('学员姓名：'+str(stu[0])+'\t学员年龄：'+str(stu[1])+'\t学员作业数：'+str(stu[2]))
     elif user_input == '2':
         if not user_input:
             continue
@@ -31,7 +31,7 @@ while True:
         if not result:
             print('未找到学员信息')
         for stu in result:
-            print(stu)
+            print('学员姓名：'+str(stu[0])+'\t学员年龄：'+str(stu[1])+'\t学员作业数：'+str(stu[2]))
     elif user_input == '3':
         if not user_input:
             continue
@@ -41,7 +41,7 @@ while True:
         if not result:
             print('未找到学员信息')
         for stu in result:
-            print(stu)
+            print('学员姓名：' + str(stu[0]) + '\t学员年龄：' + str(stu[1]) + '\t学员作业数：' + str(stu[2]))
     elif user_input == '4':
         if not user_input:
             continue
@@ -51,7 +51,7 @@ while True:
         if not result:
             print('未找到学员信息')
         for stu in result:
-            print(stu)
+            print('学员姓名：' + str(stu[0]) + '\t学员年龄：' + str(stu[1]) + '\t学员作业数：' + str(stu[2]))
     else:
         print('输入错误，请重新输入')
 
